@@ -1,0 +1,172 @@
+
+<Container>:
+    orientation: 'vertical'
+    spacing: 3
+
+    FloatLayout:
+
+        TextInput:
+            id: form
+            text: 'sin(x)'
+            fon_size: 26
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.32, .15)
+            pos_hint: {'x': .13, 'y': .46}
+
+        TextInput:
+            id: ending
+            text: '5'
+            #fon_size: 26
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.07, .1)
+            pos_hint: {'x': .07, 'y': .7}
+
+        TextInput:
+            id: being
+            text: '0'
+            #fon_size: 26
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.07, .1)
+            pos_hint: {'x': .07, 'y': .3}
+
+        TextInput:
+            id: quantity
+            text: '2000'
+            # fon_size: 26
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.1, .1)
+            pos_hint: {'x': .6, 'y': .8}
+
+        TextInput:
+            id: density
+            text: '400'
+            # fon_size: 26
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.1, .1)
+            pos_hint: {'x': .6, 'y': .6}
+
+        Button:
+            text: 'решить'
+            font_size: 46
+            #multiline: False
+            background_color: (0.2,0.2,0.99,0.3)
+            size_hint: (.3, .2)
+            pos_hint: {'x': .63, 'y': .2}
+            on_release:
+                root.cont()
+
+        Label:
+            text: '- Колличество точек'
+            font_size: 18
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.1, .1)
+            pos_hint: {'x': .77, 'y': .8}
+
+        Label:
+            text: '- Плотность точек'
+            font_size: 18
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.1, .1)
+            pos_hint: {'x': .755, 'y': .6}
+
+        Label:
+            text: '∫'
+            font_size: 84
+            multiline: False
+            background_color: (.5, .5, .5, .5)
+            size_hint: (.2, .1)
+            pos_hint: {'x': .0, 'y': .52}
+
+    FloatLayout:
+        Widget:
+            canvas:
+                Color:
+                    rgba: (0.4,0.4,0.6,0.35)
+
+                Line:
+                    width: 5
+                    points: [400,0,400,300]
+                    joint: 'none'
+                    cap: 'square'
+                    close: False
+
+                Line:
+                    width: 5
+                    points: [0,310,800,310]
+                    joint: 'none'
+                    cap: 'square'
+                    close: False
+
+                Line:
+                    width: 10
+                    points: [0,325,0,800]
+                    joint: 'none'
+                    cap: 'square'
+                    close: False
+
+                Line:
+                    width: 10
+                    points: [800,325,800,800]
+                    joint: 'none'
+                    cap: 'square'
+                    close: False
+
+                Line:
+                    width: 10
+                    points: [20,600,780,600]
+                    joint: 'none'
+                    cap: 'square'
+                    close: False
+
+        BoxLayout:
+            spacing: 5
+            BoxLayout:
+                id: destination
+
+            BoxLayout:
+                orientation: 'vertical'
+                spacing: 0
+
+                Label:
+                    text: 'Общая статистика'
+                    font_size: 35
+                    multiline: False
+                    background_color: (.4, .4, .4, .4)
+                    size_hint: (1, 0.7)
+
+                Label:
+                    id: max
+                    text: 'Максимальный У'
+                    font_size: 20
+                    multiline: False
+                    background_color: (.4, .4, .4, .4)
+                    size_hint: (1, 0.4)
+
+                Label:
+                    id: min
+                    text: 'Минимальный У'
+                    font_size: 20
+                    multiline: False
+                    background_color: (.4, .4, .4, .4)
+                    size_hint: (1, 0.4)
+
+                Label:
+                    id: answer
+                    text: 'Ответ'
+                    font_size: 25
+                    multiline: False
+                    size_hint: (1, 1)
+                    canvas.before:
+                        Color:
+                            rgba: 0.3,0.3,0.79,0.3
+                        Rectangle:
+                            pos: self.pos
+                            size: self.size
+
